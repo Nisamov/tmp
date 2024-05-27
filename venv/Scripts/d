@@ -1,0 +1,22 @@
+#!c:\Users\aabad\Documents\Bot-Dominicius\venv\Scripts\python.exe
+
+import sys, os, optparse
+
+# Ugly hack so I can code in peace.
+try:
+    from d.base import render_files
+except ImportError:
+    sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..')))
+    from d.base import render_files
+
+if __name__ == '__main__':
+
+    # Option parser
+    parser = optparse.OptionParser(description='Markdown files to documentation. Run and get on with your life.')
+    parser.add_option('-s', dest='source', default='.', help='Documentation source', metavar='SOURCE')
+    parser.add_option('-t', dest='target', default='./build', help='Documentation output target', metavar='TARGET')
+
+    (options, args) = parser.parse_args()
+
+    # Render with arguments
+    render_files(options.source, options.target)
