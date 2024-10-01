@@ -26,10 +26,11 @@ import subprocess
 from discord import Embed
 import asyncio
 import time
-pip install requests
 
 
 [Instalación]:
-
+pip install requests
 pip install discord
 pip install python-dotenv
+pip install asyncio
+pip install datetime
